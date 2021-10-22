@@ -1,6 +1,6 @@
 const linksSocialMedia = {
   github: 'allrez44',
-  youtube: 'UC4swwW_IKEKoiRG8Ctu1VBQ',
+  youtube: 'channel/UC4swwW_IKEKoiRG8Ctu1VBQ',
   instagram: 'allresenderj',
   facebook: 'allan.gomes.7731',
   twitter: 'AllanResende5',
