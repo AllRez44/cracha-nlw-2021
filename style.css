@@ -3,7 +3,7 @@
   font-family: Roboto, sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  --black: rgb(0, 6%, 13%); 
+  --black: rgb(0, 6%, 13%); /* "--" é uma declaração de variável*/
   --gray: hsl(240, 9%, 89%);
 }
 
@@ -11,14 +11,28 @@ body {
   height: 100%;
   display: grid;
   place-items: center;
-  background-color:black;
+  background: black;
+  /* o font-size padrão "rem" é 16px*/
 }
 
 main {
-  position: relative;
-  background-image: url('images/Mobile.png');
-  width: 375px;
-  height: 812px;
+  background: url(images/Mobile.svg) no-repeat center/cover;
+  width: 100vw;
+  min-height: 812px;
+  height: 100vh;
+  animation-name: backimg;
+  animation-duration: 1.9s;
+  animation-timing-function: ease;
+}
+
+@keyframes backimg {
+  from {
+    height: 400%;
+  }
+
+  to {
+    height: 100vh;
+  }
 }
 
 .container {
@@ -27,24 +41,51 @@ main {
   margin-right: auto;
   text-align: center;
   color: var(--gray);
+  animation: preFade 1.5s;
+}
+
+@keyframes preFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.container > * {
+  animation: itemsFadeIn 1s ease-in 1.5s;
+}
+
+@keyframes itemsFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .avatar {
   position: relative;
-  margin: 11.5rem auto 0; 
+  margin: 11.5rem auto 0; /*3 valores valores na margem => margin: top width bottom; ou 4 valores na margem => margin: top left right bottom */
 }
 
 .avatar span {
   position: absolute;
   top: -15px;
-  z-index: 1; 
+  z-index: 1; /* ajusta a profundidade (eixo z), sendo 0=fundo, 1=superfície */
 }
 
 .avatar > img {
+  /* ">" especifica que está EXCLUSIVAMENTE no PRIMEIRO Nível dentro da tag */
   width: 10rem;
   height: 11.5rem;
-  object-fit: cover; 
-  clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+  object-fit: cover; /* esse cover ajusta a imagem para ficar proporcional, mas sem defomações, recortando e perdendo informação */
+  clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%)
+    /* ajusta as medidas baseadas nos vértices, altura e largura */;
 }
 
 h1 {
@@ -67,10 +108,85 @@ p {
 
 ul {
   list-style-type: none;
-  margin-top: 4rem;
+  margin-top: 3rem;
   padding: 0;
   display: flex;
-  flex-direction: row; 
-  gap: 0.5rem; 
-  justify-content: center; 
+  flex-direction: row; /* ajusta a direção do conteúdo, sendo ROW ou COLUMN */
+  gap: 0.5rem; /* Literalmente o Gap entre os ítens da lista */
+  justify-content: center; /* Funciona com o display:FLEX */
+}
+
+@media (min-width: 720px) {
+  /* estilos versão tablet */
+  h1,
+  p,
+  span {
+    font-size: 2rem;
+  }
+
+  main {
+    background-image: url(images/Tablet.svg);
+    display: flex;
+    align-items: center;
+  }
+
+  .container {
+    max-width: 500px;
+  }
+
+  .avatar > img {
+    width: 15rem;
+    height: 17.25rem;
+  }
+
+  .avatar > span > img {
+    width: 120px;
+    height: 120px;
+  }
+
+  ul {
+    gap: 1.5rem;
+    margin-top: 5rem;
+  }
+
+  #userGitHubLink > img {
+    width: 24px;
+    height: 27px;
+  }
+
+  #socialLinks img {
+    height: 84px;
+  }
+
+  @keyframes backimg {
+    from {
+      height: 300vh;
+      width: 100vw;
+    }
+
+    to {
+      height: 100vh;
+      width: 100vw;
+    }
+  }
+
+  @keyframes preFade {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes itemsFadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
 }

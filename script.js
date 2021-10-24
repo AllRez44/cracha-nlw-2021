@@ -1,3 +1,24 @@
+//Práticas de Escrita de Nomes de Variável:
+//  camelCase
+//  PascalCase
+//  snake_case
+
+//        Study Concepts Only, no relation to the code
+
+//function showMeSomething() {
+//  alert('you got a friend in me')
+//}
+
+//alert('Click Ok, Asshole!')
+
+//let acceptTerms = true
+//const user = {
+//name: 'John Doe',
+//phone: 131222569,
+//acceptTerms
+//}
+//alert(user.name)
+
 const linksSocialMedia = {
   github: 'allrez44',
   youtube: 'channel/UC4swwW_IKEKoiRG8Ctu1VBQ',
@@ -7,6 +28,13 @@ const linksSocialMedia = {
   discords: 'bio/p/allrez44',
   linkedin: 'in/allan-resende-997757118'
 }
+
+function changeUserName() {
+  //document.getElementById('userGitHubName').textContent = 'All'
+  //            ou, tb, pode ser assim:
+  userGitHubName.textContent = 'All'
+}
+changeUserName()
 
 function changeSocialMediaLinks() {
   for (let li of socialLinks.children) {
