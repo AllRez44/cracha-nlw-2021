@@ -221,7 +221,7 @@ ul {
     bottom: auto;
     top:0;
     z-index: 2;
-    animation: tapeIn 1s ease;
+    animation: tapeIn 1.6s ease;
   }
 
   @keyframes tapeIn {
@@ -246,12 +246,12 @@ ul {
     height: 540px;
     background-image: url(images/mask.svg);
     opacity: 1;
-    animation: containerIn 1.5s ease;
+    animation: containerIn 2s ease;
   }
 
  @keyframes containerIn {
    from{
-     top:300px;
+     top:1600px;
      opacity: 0;
    }
    to{
