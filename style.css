@@ -20,12 +20,12 @@ main {
   width: 100vw;
   min-height: 812px;
   height: 100vh;
-  animation-name: backimg;
+  animation-name: backImg;
   animation-duration: 1.9s;
   animation-timing-function: ease;
 }
 
-@keyframes backimg {
+@keyframes backImg {
   from {
     height: 400%;
   }
@@ -33,6 +33,11 @@ main {
   to {
     height: 100vh;
   }
+}
+
+.break{
+ position: absolute;
+  top:-100rem;
 }
 
 .container {
@@ -108,7 +113,7 @@ p {
 
 ul {
   list-style-type: none;
-  margin-top: 3rem;
+  margin-top: 2rem;
   padding: 0;
   display: flex;
   flex-direction: row; /* ajusta a direção do conteúdo, sendo ROW ou COLUMN */
@@ -128,6 +133,10 @@ ul {
     background-image: url(images/Tablet.svg);
     display: flex;
     align-items: center;
+  }
+
+  .break{
+    opacity: 0;
   }
 
   .container {
@@ -155,10 +164,11 @@ ul {
   }
 
   #socialLinks img {
+    width: 84px;
     height: 84px;
   }
 
-  @keyframes backimg {
+  @keyframes backImg {
     from {
       height: 300vh;
       width: 100vw;
@@ -189,4 +199,122 @@ ul {
       opacity: 1;
     }
   }
+}
+
+@media (min-width: 960px) {
+  /* estilos versão desktop */
+ 
+  main {
+    background-image: url(images/Desktop.svg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tape{
+    width: 64px;
+    height: 158px;
+    background-image: url(images/tape.svg);
+    position: absolute;
+    left:auto;
+    right: auto;
+    bottom: auto;
+    top:0;
+    z-index: 2;
+    animation: tapeIn 1s ease;
+  }
+
+  @keyframes tapeIn {
+    from{
+      top:-158px;
+      opacity: 0;
+    }
+  }
+
+  .break{
+    position: relative;
+    top:0;
+    opacity: 1;
+    margin: 18px auto 0;
+    height: 16px;
+    z-index: 1;
+  }
+  .container {
+    position: absolute;
+    top:138px;
+    width: 358px;
+    height: 540px;
+    background-image: url(images/mask.svg);
+    opacity: 1;
+    animation: containerIn 1.5s ease;
+  }
+
+ @keyframes containerIn {
+   from{
+     top:300px;
+     opacity: 0;
+   }
+   to{
+   }
+ }
+
+  .avatar {
+    position: relative;
+    top:-8.5rem;
+  }
+
+  .avatar > img {
+    width: 10rem;
+    height: 11.5rem;
+  }
+
+  .avatar span > img{
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-top: -7rem;
+  }
+
+  #userGitHubLink img{
+    width:1rem;
+    height: 1rem;
+  }
+
+  span{
+    font-size: 1rem ;
+  }
+
+  p{
+    margin: 1.7rem auto;
+    font-size: 1rem;
+    width: 16.375rem;
+    height: 3rem;
+  }
+
+  ul {
+    gap: 0.5rem;
+    margin: 2.7rem auto 2rem;
+
+  }
+
+  #socialLinks img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  @keyframes backImg {
+   0
+  }
+
+  @keyframes preFade {
+    0
+  }
+
+  @keyframes itemsFadeIn {
+    0
+  }
+
 }
