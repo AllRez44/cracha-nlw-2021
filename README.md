@@ -1,4 +1,4 @@
-# Crachá Virtual criado na trilha Origin na NLW Heat de 2021
+# Crachá Virtual criado na trilha Origin da NLW Heat de 2021
 https://user-images.githubusercontent.com/91804688/180642024-0962b653-b455-4017-9d1d-b3e273bdb7a1.mp4
 
 <h3> Link: https://allrez44.github.io/cracha-nlw-2021/ </h3>
